@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-11 col-sm-10 mx-auto">
+          <h1>TRABAJOS!</h1>  
+        <div id="cuestiones">
+      </div>      
+    </div>
+      <select id="menu" onchange="location=this.value;">
+        <option value="index.html">uno</option>
+        <option value="dos.html">dos</option>
+        <option value="tres.html" selected>tres</option>
+    </select>
+    <!-- a la versión jquery.slim.min.js le faltan algunas cosas que necesitaremos-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- después de jQuery viene Popper.js y luego Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- después de ir por las bibliotecas, puedes aprovecharlas-->
+    <script>
+      var a = ["Holaaa mundo!","Adios mundo cruel!"] 
+     
+
+      var b = {saludo:"Hola mundo!", despedida :"Adios mundo!"}
+      
+      var c = [
+      {saludo:"hola mundo" , chroma:"red"},
+      {saludo: "hola" , chroma : "blue" },
+      {saludo: "h..." , chroma :"green"}
+      ]
+
+      var curso = [
+      {nombre: "María García-Huidobro", 
+      ingreso:2016,
+
+      trabajos : [
+      {titulo:"RAF-TALLER 4",imagen:"https://raw.githubusercontent.com/marigarciahuidobro/ev2/gh-pages/fotoraf.jpg"},
+
+      {titulo:"MAGGI TWIZZ-TALLER 5",imagen:"https://raw.githubusercontent.com/marigarciahuidobro/ev2/gh-pages/fototwizz.jpg"},
+
+      {titulo:"LAMPARA-ESTRUCTURAS Y MATERIALES",imagen:"https://raw.githubusercontent.com/marigarciahuidobro/ev2/gh-pages/foto-lamparasiii.jpg"}
+
+      ]
+      },
+
+      {
+
+      nombre: "María Clark",
+
+      ingreso:2016,
+
+      trabajos:[
+
+      {titulo: "Acuarelas",imagen:"https://raw.githubusercontent.com/mariaignaciaclark/ev2/gh-pages/imagenes/trabajo1.jpg"},
+
+      {titulo: "Isao Chair",imagen:"https://raw.githubusercontent.com/mariaignaciaclark/ev2/gh-pages/imagenes/trabajo2.jpg"},
+
+      {titulo: "Flores",imagen:"https://raw.githubusercontent.com/mariaignaciaclark/ev2/gh-pages/imagenes/trabajo3.jpg"}
+
+      ]
+},
+      ]
+
+      
+
+       $.each(curso, function(i, integrante) {
+            $("#cuestiones").append("<h2 class='mt-5 bg-azul text-white'>" + integrante.nombre + "</h2>");
+            
+          $.each(integrante.trabajos, function(i, trabajo) {
+              $("#cuestiones").append("<h5 class='border-top my-2 py-3'>" + trabajo.titulo + "</h5>").append("<img src='" + trabajo.imagen + "'class='img-fluid'>");
+          });
+
+        });
+
+
+    </script>
+  </body>
+</html>
